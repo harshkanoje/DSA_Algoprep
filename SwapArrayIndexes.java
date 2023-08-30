@@ -1,35 +1,24 @@
 import java.util.Scanner;
 
 public class SwapArrayIndexes {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] arr = new int[n];
 
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
+            arr[i] = scn.nextInt();
         }
-        int sp = sc.nextInt();
-        int ep = sc.nextInt();
-        swap(arr, sp, ep);
+        int idx1 = scn.nextInt();
+        int idx2 = scn.nextInt();
+
+        int temp = arr[idx1];
+        arr[idx1] = arr[idx2];
+        arr[idx2] = temp;
+
         for (int i = 0; i < n; i++) {
             System.out.print(arr[i] + " ");
         }
-        sc.close();
-
-    }
-
-    public static void swap(int arr[], int sp, int ep) {
-
-        while (sp < ep) {
-            int temp = arr[sp];
-            arr[sp] = arr[ep];
-            arr[ep] = temp;
-
-            sp++;
-            ep--;
-
-        }
-
+        scn.close();
     }
 }
